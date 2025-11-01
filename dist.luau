@@ -4,7 +4,7 @@
 
 --[[
     @author biggaboy212
-    @name Cascade
+    @name Yanix
     @description A Luau UI library based on macOS Sequoia.
     @license MIT License
 
@@ -14,6 +14,21 @@
 
     This file was automatically generated with darklua, it is not intended for manual editing.
 --]]
+
+local coreGui = game:GetService("CoreGui")
+local playerGui = game:GetService("Players").LocalPlayer:FindFirstChild("PlayerGui")
+    
+for i, v in pairs(coreGui:GetDescendants()) do
+    if v:IsA("ScreenGui") and v.Name == "Yanix" then
+        v:Destroy()
+    end
+end
+
+for i, v in pairs(playerGui:GetDescendants()) do
+    if v:IsA("ScreenGui") and v.Name == "Yanix" then
+        v:Destroy()
+    end
+end
 
 local a a={cache={},load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
 end return a.cache[b].c end}do function a.a()local b={}b.Clone=function(c)local
@@ -3656,7 +3671,7 @@ local function o(p)local q={}for r,s in pairs(p)do local t=typeof(s)if t==
 'table'then if s.Value~=nil and s.Connect and typeof(s.Connect)=='function'then
 q[r]=d.Value(s.Value)else q[r]=o(s)end else q[r]=s end end return q end l.New=
 function(p)if not game:IsLoaded()then game.Loaded:Wait()end p=p or{}local q=p.
-Theme or h.Light p.Theme=o(q)local r=(b.ProtectUI(j'ScreenGui'{Name='Cascade',
+Theme or h.Light p.Theme=o(q)local r=(b.ProtectUI(j'ScreenGui'{Name='Yanix',
 IgnoreGuiInset=true,ResetOnSpawn=false,ZIndexBehavior=Enum.ZIndexBehavior.
 Sibling,DisplayOrder=200,OnTopOfCoreBlur=true}))local s=(j'ImageButton'{Name=
 'WindowPill',AnchorPoint=Vector2.new(0.5,0),AutoButtonColor=false,
