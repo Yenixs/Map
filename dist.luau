@@ -19,7 +19,7 @@ local coreGui = game:GetService("CoreGui")
 local playerGui = game:GetService("Players").LocalPlayer:FindFirstChild("PlayerGui")
 
 for _, parent in ipairs({coreGui, playerGui}) do
-	for _, v in ipairs(parent:GetDescendants()) do
+	for _, v in ipairs(parent:GetChildren()) do
 		if v:IsA("ScreenGui") and v.Name == "Cascade" then
 			v:Destroy()
 		end
