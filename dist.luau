@@ -15,15 +15,10 @@
     This file was automatically generated with darklua, it is not intended for manual editing.
 --]]
 
-local coreGui = game:GetService("CoreGui")
-local playerGui = game:GetService("Players").LocalPlayer:FindFirstChild("PlayerGui")
+local Found = getgenv().NowProtect
 
-for _, parent in ipairs({coreGui, playerGui}) do
-	for _, v in ipairs(parent:GetChildren()) do
-		if v:IsA("ScreenGui") and v.Name == "Cascade" then
-			v:Destroy()
-		end
-	end
+if Found then 
+	Found:Destroy()
 end
 
 local a a={cache={},load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
@@ -3669,7 +3664,7 @@ local function o(p)local q={}for r,s in pairs(p)do local t=typeof(s)if t==
 	function(p)if not game:IsLoaded()then game.Loaded:Wait()end p=p or{}local q=p.
 		Theme or h.Light p.Theme=o(q)local r=(b.ProtectUI(j'ScreenGui'{Name='Cascade',
 			IgnoreGuiInset=true,ResetOnSpawn=false,ZIndexBehavior=Enum.ZIndexBehavior.
-			Sibling,DisplayOrder=200,OnTopOfCoreBlur=true}))local s=(j'ImageButton'{Name=
+			Sibling,DisplayOrder=200,OnTopOfCoreBlur=true})) getgenv().NowProtect = r local s=(j'ImageButton'{Name=
 			'WindowPill',AnchorPoint=Vector2.new(0.5,0),AutoButtonColor=false,
 			BackgroundColor3=Color3.fromRGB(255,255,255),BackgroundTransparency=1,
 			BorderColor3=Color3.fromRGB(0,0,0),BorderSizePixel=0,Image=
