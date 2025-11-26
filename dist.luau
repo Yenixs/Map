@@ -22,7 +22,7 @@ for i = 1, #coreGui:GetDescendants() do
 	local v = coreGui:GetDescendants()[i]
 	if v:IsA("ScreenGui") and v.Name == "Cascade" then
 		v:Destroy()
-		task.wait(.1)
+		task.wait()
 	end
 end
 
@@ -30,7 +30,7 @@ for i = 1, #playerGui:GetDescendants() do
 	local v = playerGui:GetDescendants()[i]
 	if v:IsA("ScreenGui") and v.Name == "Cascade" then
 		v:Destroy()
-		task.wait(.1)
+		task.wait()
 	end
 end
 
