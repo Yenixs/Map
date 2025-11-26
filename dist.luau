@@ -18,22 +18,13 @@
 local coreGui = game:GetService("CoreGui")
 local playerGui = game:GetService("Players").LocalPlayer:FindFirstChild("PlayerGui")
 
-for i = 1, #coreGui:GetDescendants() do
-	local v = coreGui:GetDescendants()[i]
-	if v:IsA("ScreenGui") and v.Name == "Cascade" then
-		v:Destroy()
-		task.wait()
+for _, parent in ipairs({coreGui, playerGui}) do
+	for _, v in ipairs(parent:GetDescendants()) do
+		if v:IsA("ScreenGui") and v.Name == "Cascade" then
+			v:Destroy()
+		end
 	end
 end
-
-for i = 1, #playerGui:GetDescendants() do
-	local v = playerGui:GetDescendants()[i]
-	if v:IsA("ScreenGui") and v.Name == "Cascade" then
-		v:Destroy()
-		task.wait()
-	end
-end
-
 
 local a a={cache={},load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
 	end return a.cache[b].c end}do function a.a()local b={}b.Clone=function(c)local
